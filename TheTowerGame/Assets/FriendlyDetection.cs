@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FriendlyDetection : MonoBehaviour {
 
@@ -27,6 +28,7 @@ public class FriendlyDetection : MonoBehaviour {
 	int record;
 	float full = 2;
 	public float health = 1f;
+	public Image healthbar;
 
 	public void TakeDamage(float amount) {
 		health -= amount;
@@ -40,6 +42,7 @@ public class FriendlyDetection : MonoBehaviour {
 	}
 
 	void Update () {
+		healthbar.fillAmount = health;
 
 		shortestDistance = 10000;
 		towerShortestDistance = 10000;
