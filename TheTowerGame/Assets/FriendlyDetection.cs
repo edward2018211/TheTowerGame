@@ -84,7 +84,7 @@ public class FriendlyDetection : MonoBehaviour {
 			}
 		}
 
-		if (shortestDistance < distanceStartTargetingPlayer ) {
+		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
 
 			if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
