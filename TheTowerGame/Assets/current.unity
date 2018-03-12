@@ -6580,7 +6580,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1094173786}
   - component: {fileID: 1094173785}
-  - component: {fileID: 1094173784}
   - component: {fileID: 1094173783}
   m_Layer: 0
   m_Name: friendly
@@ -6597,23 +6596,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1094173782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
+  m_Script: {fileID: 11500000, guid: ad1c81518abe546db82e7d23563d51fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
-  health: 1
---- !u!114 &1094173784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1094173782}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameWon: 0
+  distanceStartTargetingPlayer: 15
   health: 1
 --- !u!212 &1094173785
 SpriteRenderer:
@@ -6681,7 +6668,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1119205901}
   - component: {fileID: 1119205900}
-  - component: {fileID: 1119205899}
   - component: {fileID: 1119205898}
   m_Layer: 0
   m_Name: friendly (1)
@@ -6698,23 +6684,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1119205897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
+  m_Script: {fileID: 11500000, guid: ad1c81518abe546db82e7d23563d51fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
-  health: 1
---- !u!114 &1119205899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1119205897}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameWon: 0
+  distanceStartTargetingPlayer: 15
   health: 1
 --- !u!212 &1119205900
 SpriteRenderer:
@@ -11249,6 +11223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
+  distanceStartTargetingPlayer: 15
   health: 1
 --- !u!61 &2011569054
 BoxCollider2D:

@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendlyDetection : MonoBehaviour {
-
+public class EnemyDetection : MonoBehaviour {
 	public bool gameWon = false;
 	GameObject[] opposingObjectPeople;
 	GameObject[] opposingFriendlySmallTower;
@@ -44,9 +43,9 @@ public class FriendlyDetection : MonoBehaviour {
 		shortestDistance = 10000;
 		towerShortestDistance = 10000;
 
-		opposingObjectPeople = GameObject.FindGameObjectsWithTag("friendly");
-		opposingFriendlySmallTower = GameObject.FindGameObjectsWithTag("smallFriendlyTower");
-		opposingFriendlyLargeTower = GameObject.FindGameObjectsWithTag("largeFriendlyTower");
+		opposingObjectPeople = GameObject.FindGameObjectsWithTag("enemy");
+		opposingFriendlySmallTower = GameObject.FindGameObjectsWithTag("smallEnemyTower");
+		opposingFriendlyLargeTower = GameObject.FindGameObjectsWithTag("largeEnemyTower");
 
 		posx = transform.position.x; 
 		posy = transform.position.y;
@@ -180,5 +179,4 @@ public class FriendlyDetection : MonoBehaviour {
 		}
 
 	}
-
 }
