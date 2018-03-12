@@ -244,7 +244,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
+<<<<<<< HEAD
   movementSpeed: 0.1
+=======
+  movementSpeed: 0.01
+>>>>>>> movementSpeedPublic
   distanceStartTargetingPlayer: 12
   health: 1
   healthbar: {fileID: 114869715948222064}

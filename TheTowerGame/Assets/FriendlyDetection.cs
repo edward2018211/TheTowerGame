@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FriendlyDetection : MonoBehaviour {
 
 	public bool gameWon = false;
-	public float movementSpeed;
+	public float movementSpeed = 0.01f;
 	GameObject[] opposingObjectPeople;
 	GameObject[] opposingFriendlySmallTower;
 	GameObject[] opposingFriendlyLargeTower;
