@@ -245,9 +245,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameWon: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   movementSpeed: 0.1
 =======
   movementSpeed: 0.01
+>>>>>>> movementSpeedPublic
+=======
+  movementSpeed: 0.1
 >>>>>>> movementSpeedPublic
   distanceStartTargetingPlayer: 12
   health: 1
