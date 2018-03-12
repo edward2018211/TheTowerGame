@@ -1194,7 +1194,7 @@ GameObject:
   - component: {fileID: 175555868}
   m_Layer: 0
   m_Name: tower (3)
-  m_TagString: Untagged
+  m_TagString: smallEnemyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2802,7 +2802,7 @@ GameObject:
   - component: {fileID: 416910072}
   m_Layer: 0
   m_Name: maintower
-  m_TagString: Untagged
+  m_TagString: largeFriendlyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3521,7 +3521,7 @@ GameObject:
   - component: {fileID: 556229879}
   m_Layer: 0
   m_Name: tower
-  m_TagString: Untagged
+  m_TagString: smallFriendlyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5385,6 +5385,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6599,6 +6600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWon: 0
   health: 1
 --- !u!114 &1094173784
 MonoBehaviour:
@@ -6611,6 +6613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWon: 0
   health: 1
 --- !u!212 &1094173785
 SpriteRenderer:
@@ -6698,6 +6701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWon: 0
   health: 1
 --- !u!114 &1119205899
 MonoBehaviour:
@@ -6710,6 +6714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWon: 0
   health: 1
 --- !u!212 &1119205900
 SpriteRenderer:
@@ -7762,7 +7767,7 @@ GameObject:
   - component: {fileID: 1423070672}
   m_Layer: 0
   m_Name: tower (1)
-  m_TagString: Untagged
+  m_TagString: smallFriendlyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8139,7 +8144,7 @@ GameObject:
   - component: {fileID: 1527212674}
   m_Layer: 0
   m_Name: maintower (1)
-  m_TagString: Untagged
+  m_TagString: largeEnemyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10248,7 +10253,7 @@ GameObject:
   - component: {fileID: 1895923882}
   m_Layer: 0
   m_Name: tower (2)
-  m_TagString: Untagged
+  m_TagString: smallEnemyTower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11243,6 +11248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8f8ae62e8ff43b8a21b45e36ca6a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameWon: 0
   health: 1
 --- !u!61 &2011569054
 BoxCollider2D:

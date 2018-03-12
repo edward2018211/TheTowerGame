@@ -16,7 +16,6 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 	GameObject[] gameobjects; 
 	float degrees;
 	GameObject nearestenemy;
-	//EnemyDetection enemy;
 	float posx; 
 	float posy;
 	float posz;

@@ -7,6 +7,10 @@ TagManager:
   - enemy
   - spawnPoint
   - friendly
+  - smallFriendlyTower
+  - largeFriendlyTower
+  - smallEnemyTower
+  - largeEnemyTower
   layers:
   - Default
   - TransparentFX
