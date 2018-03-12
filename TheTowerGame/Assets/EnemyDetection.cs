@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour {
 	public bool gameWon = false;
-	public float movementSpeed;
+	public float movementSpeed = 0.01f;
 	GameObject[] opposingObjectPeople;
 	GameObject[] opposingFriendlySmallTower;
 	GameObject[] opposingFriendlyLargeTower;
