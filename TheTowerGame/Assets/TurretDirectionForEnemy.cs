@@ -9,6 +9,7 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 	public LayerMask whatToHit;
 	float timeToSpawnEffect = 0;
 	public float effectSpawnRate = 10;
+	public float distanceStartTargeting = 15f;
 	float timeToFire = 0;
 	Transform nearestEnemyPoint;
 	Transform firePoint;
@@ -75,7 +76,7 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 		}
 			
 
-		if (shortestDistance < 15f) {
+		if (shortestDistance < distanceStartTargeting) {
 
 			Vector3 difference =  (nearestenemy.transform.position) - transform.position;
 			difference.Normalize();
