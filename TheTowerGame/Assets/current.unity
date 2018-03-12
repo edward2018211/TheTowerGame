@@ -2097,6 +2097,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4612175728433746, guid: b31fcd023a1ec4167b9755475fc1fdaf,
     type: 2}
   damage: 10
@@ -4041,6 +4042,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4115503336756376, guid: 1e5757fb237ef4a6fa94d9ba34bd337f,
     type: 2}
   damage: 10
@@ -4138,6 +4140,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4976172728632050, guid: 38bc0b055c5cb4a2295c990481b85db5,
     type: 2}
   damage: 10
@@ -5188,6 +5191,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 114944764135429296, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114944764135429296, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
   m_IsPrefabParent: 0
@@ -5427,6 +5440,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -5892,6 +5906,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 51
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4311718840594626, guid: 5f7f9c8bd6aa94f96a794b885422e981,
     type: 2}
   damage: 10
@@ -6641,6 +6656,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
+  movementSpeed: 0.01
   distanceStartTargetingPlayer: 15
   health: 1
 --- !u!212 &1094173785
@@ -6729,6 +6745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
+  movementSpeed: 0.01
   distanceStartTargetingPlayer: 15
   health: 1
 --- !u!212 &1119205900
@@ -7692,6 +7709,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967035
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4612175728433746, guid: b31fcd023a1ec4167b9755475fc1fdaf,
     type: 2}
   damage: 10
@@ -11213,6 +11231,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 307
   effectSpawnRate: 10
+  distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4327449678082150, guid: 8679461d227174ed49e8247df191138f,
     type: 2}
   damage: 10

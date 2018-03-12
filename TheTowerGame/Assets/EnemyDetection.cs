@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyDetection : MonoBehaviour {
 	public bool gameWon = false;
+	public float movementSpeed;
 	GameObject[] opposingObjectPeople;
 	GameObject[] opposingFriendlySmallTower;
 	GameObject[] opposingFriendlyLargeTower;
@@ -82,97 +83,97 @@ public class EnemyDetection : MonoBehaviour {
 		if (shortestDistance < distanceStartTargetingPlayer ) {
 
 			if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y < -0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y < -0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y == 0 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y == 0 && opposingObjectPeople [record].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0 && opposingObjectPeople [record].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
 			}
 
 		} else if (opposingFriendlySmallTower != null) {
 
 			if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y < -0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y < -0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y == 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y == 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
 			}
 
 		} else if(opposingFriendlyLargeTower != null) {
 
 			if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y < -0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = false;
 				}
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y < -0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
 				if (!GetComponent<SpriteRenderer> ().flipX) {
 					GetComponent<SpriteRenderer> ().flipX = true;
 				}
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y == 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y == 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - 0.01f, transform.position.y);
+				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - 0.01f);
+				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
 			} 
 		} else {
 			gameWon = true;
