@@ -22,7 +22,7 @@ public class character_arm : MonoBehaviour {
 
 
 	void Awake(){
-		firePoint = transform.FindChild ("FirePoint");
+		firePoint = transform.Find ("FirePoint");
 		if (firePoint == null) {
 			Debug.LogError ("No Firepoint");
 		}

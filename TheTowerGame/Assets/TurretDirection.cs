@@ -37,7 +37,7 @@ public class TurretDirection : MonoBehaviour {
 
 	void Awake(){
 		
-		firePoint = transform.FindChild ("FirePoint");  
+		firePoint = transform.Find ("FirePoint");  
 
 	}
 
