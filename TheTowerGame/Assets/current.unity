@@ -5193,13 +5193,8 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114944764135429296, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
         type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114944764135429296, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
-        type: 2}
       propertyPath: movementSpeed
-      value: 0.01
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
@@ -5440,7 +5435,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
