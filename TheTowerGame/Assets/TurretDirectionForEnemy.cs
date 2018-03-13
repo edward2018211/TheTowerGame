@@ -38,12 +38,6 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 	void Awake(){
 
 		firePoint = transform.Find ("FirePoint");
-		if (firePoint == null) {
-			Debug.LogError ("No Firepoint");
-		} else {
-			Debug.Log ("This gun is working");
-		}
-
 
 
 	}
@@ -102,14 +96,12 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 		Destroy (clone.gameObject, 0.02f);
 	}
 
-	void Shoot(){
-		Debug.Log ("Works"); 
+	void Shoot(){ 
 		Vector2 mousePosition = new Vector2 (nearestEnemyPoint.position.x, nearestEnemyPoint.position.y );
 		Vector2 firePointPrecision = new Vector2 (firePoint.position.x, firePoint.position.y);
 		RaycastHit2D hit = Physics2D.Raycast (firePointPrecision, mousePosition - firePointPrecision, 100, whatToHit);
 		if (Time.time >= timeToSpawnEffect) {
 			Effect ();
-			Debug.Log ("Validated");
 			timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
 		}
 	}
