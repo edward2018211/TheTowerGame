@@ -7,6 +7,9 @@ public class character_controller : MonoBehaviour {
 	public float moveSpeed = 0.01f;
 	 
 	Transform playerGraphics;
+	public GameObject bullet;
+	public GameObject firePoint;
+
 
 	void Start () {
 		
@@ -42,6 +45,11 @@ public class character_controller : MonoBehaviour {
 
 		if (Input.GetKey("s")) {
 			transform.position = new Vector2 (transform.position.x , transform.position.y - moveSpeed );
+		}
+			
+		if (Input.GetMouseButtonDown (0)) {
+			
+			Instantiate (bullet, firePoint.transform.position, Quaternion.Euler(firePoint.transform.rotation.eulerAngles.x,firePoint.transform.rotation.eulerAngles.y,firePoint.transform.rotation.eulerAngles.z - 90));
 		}
 
 
