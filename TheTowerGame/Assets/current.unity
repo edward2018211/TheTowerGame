@@ -5289,7 +5289,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -8581,13 +8580,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 61653542494522782, guid: f741156b9b10f40c9acad2e42d19da95,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 61266269400804996, guid: f741156b9b10f40c9acad2e42d19da95, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f741156b9b10f40c9acad2e42d19da95, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1638207258
