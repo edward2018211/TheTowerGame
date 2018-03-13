@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4412155220862296}
   - component: {fileID: 212431593396776626}
   - component: {fileID: 114647946983905844}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: superminion_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114912919876999844}
   - component: {fileID: 50354071659958794}
   - component: {fileID: 61183036737268548}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: superminion
   m_TagString: friendly
   m_Icon: {fileID: 0}

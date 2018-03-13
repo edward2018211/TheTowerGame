@@ -11,6 +11,9 @@ TagManager:
   - largeFriendlyTower
   - smallEnemyTower
   - largeEnemyTower
+  - Fire
+  - friendlyweapon
+  - enemyweapon
   layers:
   - Default
   - TransparentFX
@@ -21,10 +24,10 @@ TagManager:
   - 
   - 
   - Character
-  - 
-  - 
-  - 
-  - 
+  - friendlyweapon
+  - enemyweapon
+  - friendly
+  - enemy
   - 
   - 
   - 
