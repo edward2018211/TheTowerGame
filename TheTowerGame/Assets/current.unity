@@ -2102,7 +2102,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &270203171
 GameObject:
   m_ObjectHideFlags: 0
@@ -4047,7 +4047,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &633201781
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,7 +4145,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &654650809
 GameObject:
   m_ObjectHideFlags: 0
@@ -5900,7 +5900,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &1032629973
 GameObject:
   m_ObjectHideFlags: 0
@@ -7708,7 +7708,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &1406729513
 GameObject:
   m_ObjectHideFlags: 0
@@ -11272,7 +11272,7 @@ MonoBehaviour:
     type: 2}
   damage: 10
   range: 1000
-  rotationOffset: 90
+  rotationOffset: -90
 --- !u!1 &2019957300
 GameObject:
   m_ObjectHideFlags: 0
