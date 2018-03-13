@@ -40,7 +40,7 @@ public class EnemyDetection : MonoBehaviour {
 		Destroy (gameObject);
 	}
 
-	GameObject getTarget() {
+	public GameObject getTarget() {
 
 
 		if (target == 0) {

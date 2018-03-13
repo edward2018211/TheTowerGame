@@ -44,7 +44,7 @@ public class FriendlyDetection : MonoBehaviour {
 	}
 
 
-	GameObject getTarget() {
+	public GameObject getTarget() {
 
 
 		if (target == 0) {
