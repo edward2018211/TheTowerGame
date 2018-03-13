@@ -12,7 +12,7 @@ public class FriendlyDetection : MonoBehaviour {
 	GameObject[] opposingFriendlyLargeTower;
 	GameObject nearestenemy;
 	GameObject nearestTower;
-	public float distanceStartTargetingPlayer;
+	public float distanceStartTargetingPlayer = 5f;
 	float posx; 
 	float posy;
 	float posz;
@@ -30,6 +30,7 @@ public class FriendlyDetection : MonoBehaviour {
 	float full = 2;
 	public float health = 1f;
 	public Image healthbar;
+	int target;
 
 	public void TakeDamage(float amount) {
 		health -= amount;
@@ -40,6 +41,19 @@ public class FriendlyDetection : MonoBehaviour {
 
 	void Die(){
 		Destroy (gameObject);
+	}
+
+
+	GameObject getTarget() {
+
+
+		if (target == 0) {
+			return nearestenemy;
+		} else if (target == 1) {
+			return nearestTower;
+		} else{
+			return opposingFriendlyLargeTower [0];
+		}
 	}
 
 	void Update () {
@@ -86,6 +100,8 @@ public class FriendlyDetection : MonoBehaviour {
 
 		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
 
+			target = 0;
+
 			if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
@@ -118,6 +134,8 @@ public class FriendlyDetection : MonoBehaviour {
 
 		} else if (opposingFriendlySmallTower != null) {
 
+			target = 1;
+
 			if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
@@ -149,6 +167,8 @@ public class FriendlyDetection : MonoBehaviour {
 			}
 
 		} else if(opposingFriendlyLargeTower != null) {
+
+			target = 2;
 
 			if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
