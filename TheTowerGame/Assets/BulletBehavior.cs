@@ -7,6 +7,7 @@ public class BulletBehavior : MonoBehaviour {
 	// Use this for initialization
 	public float range = 60;
 	int counter;
+	public float damage = 10;
 	void Start () {
 		
 	}

@@ -29,9 +29,15 @@ public class EnemyDetection : MonoBehaviour {
 	public float health = 1f;
 	int target;
 
+	void OnCollisionEnter2D(Collision2D c){
+		if (c.gameObject.tag == "enemyweapon") {
+			TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
+		}
+	}
+
 	public void TakeDamage(float amount) {
 		health -= amount;
-		if (health == 1f) {
+		if (health <= 0) {
 			Die ();
 		}
 	}

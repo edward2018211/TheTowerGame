@@ -32,9 +32,16 @@ public class FriendlyDetection : MonoBehaviour {
 	public Image healthbar;
 	int target;
 
+	void OnCollisionEnter2D(Collision2D c){
+		if (c.gameObject.tag == "friendlyweapon") {
+			TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
+		}
+	}
+
+
 	public void TakeDamage(float amount) {
 		health -= amount;
-		if (health == 1f) {
+		if (health <= 0) {
 			Die ();
 		}
 	}
