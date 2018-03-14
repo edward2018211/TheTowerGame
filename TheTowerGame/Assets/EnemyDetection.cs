@@ -29,6 +29,8 @@ using UnityEngine.UI;
 				    int record;
 				    float full = 2;
 				    public float health = 1f;
+					public Image healthbar;
+
 				    int target;
 				    bool notTargetingPlayer = true;
 				    float angle1;
@@ -65,6 +67,8 @@ using UnityEngine.UI;
 					    }
 
 				    void Update () {
+			healthbar.fillAmount = health;
+
 					        notTargetingPlayer = true;
 					        shortestDistance = 10000;
 					        towerShortestDistance = 10000;

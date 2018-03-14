@@ -269,6 +269,7 @@ MonoBehaviour:
   movementSpeed: 0.02
   distanceStartTargetingPlayer: 10
   health: 1
+  healthbar: {fileID: 114040412368181230}
 --- !u!114 &114974299338627232
 MonoBehaviour:
   m_ObjectHideFlags: 1
