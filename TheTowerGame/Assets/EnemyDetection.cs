@@ -13,6 +13,7 @@ using UnityEngine.UI;
 				    GameObject nearestenemy;
 				    GameObject nearestTower;
 				    public float distanceStartTargetingPlayer = 5f;
+	    			public float distanceToStopFromTarget = 10f;
 				    float posx; 
 				    float posy;
 				    float posz;
@@ -113,10 +114,11 @@ using UnityEngine.UI;
 
 						            target = 0;
 						            notTargetingPlayer = false;
-
+									
+									if(shortestDistance > distanceToStopFromTarget){
 						            angle1 = Mathf.Atan2 ((opposingObjectPeople [record].transform.position.y - transform.position.y), (opposingObjectPeople [record].transform.position.x - transform.position.x));
 						            transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle1) * movementSpeed), transform.position.y + (Mathf.Sin (angle1) * movementSpeed));
-
+									}
 
 						        }
 					          else if (opposingFriendlySmallTower != null && notTargetingPlayer == true) {
