@@ -244,8 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
-  movementSpeed: 0.05
+  movementSpeed: 0.1
   distanceStartTargetingPlayer: 10
+  meleeDamage: 0.1
   health: 1
   healthbar: {fileID: 114340063180165450}
 --- !u!212 &212909693732158158
