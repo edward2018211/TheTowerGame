@@ -715,7 +715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb7e0480910b4d57a02b5dcd295f9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1295009877}
+  enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
   stopSpawning: 0
   spawnTime: 1
   spawnDelay: 5
@@ -2598,7 +2598,7 @@ GameObject:
   - component: {fileID: 416910071}
   - component: {fileID: 416910070}
   - component: {fileID: 416910072}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: maintower
   m_TagString: largeFriendlyTower
   m_Icon: {fileID: 0}
@@ -3363,7 +3363,7 @@ GameObject:
   - component: {fileID: 556229878}
   - component: {fileID: 556229877}
   - component: {fileID: 556229879}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tower
   m_TagString: smallFriendlyTower
   m_Icon: {fileID: 0}
@@ -3677,7 +3677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb7e0480910b4d57a02b5dcd295f9dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1258255708625722, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+  enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
   stopSpawning: 0
   spawnTime: 1
   spawnDelay: 3
@@ -3803,7 +3803,7 @@ GameObject:
   - component: {fileID: 609658994}
   - component: {fileID: 609658993}
   - component: {fileID: 609658995}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: character_gun (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3879,17 +3879,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84cbe9fa8ef4ab7b44f46ce7b3e13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
+  fireRate: 10
   Damage: 10
   whatToHit:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 4147
   effectSpawnRate: 10
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4276645424017110, guid: 5991b3ccdd82d4d27b563933c1338ee4,
     type: 2}
   damage: 10
   range: 1000
+  bullet: {fileID: 1439062356261828, guid: 2c3561245cf814ffdaddbe55176483bf, type: 2}
   rotationOffset: -90
 --- !u!1 &633201781
 GameObject:
@@ -3901,7 +3902,7 @@ GameObject:
   - component: {fileID: 633201783}
   - component: {fileID: 633201782}
   - component: {fileID: 633201784}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: character_gun (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3977,17 +3978,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84cbe9fa8ef4ab7b44f46ce7b3e13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
+  fireRate: 10
   Damage: 10
   whatToHit:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 4147
   effectSpawnRate: 10
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4496245633663846, guid: 38bc0b055c5cb4a2295c990481b85db5,
     type: 2}
   damage: 10
   range: 1000
+  bullet: {fileID: 1439062356261828, guid: 2c3561245cf814ffdaddbe55176483bf, type: 2}
   rotationOffset: -90
 --- !u!1 &654650809
 GameObject:
@@ -4995,64 +4997,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &870797864
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.34
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 11.45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1114268970391434, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134777464573916, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1080267922276048, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-      propertyPath: m_Layer
-      value: 12
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &889084126
 GameObject:
   m_ObjectHideFlags: 0
@@ -5304,7 +5248,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &895342179
 MonoBehaviour:
@@ -5672,7 +5616,7 @@ GameObject:
   - component: {fileID: 1016929869}
   - component: {fileID: 1016929868}
   - component: {fileID: 1016929870}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: character_gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5748,17 +5692,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84cbe9fa8ef4ab7b44f46ce7b3e13b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
-  Damage: 10
+  fireRate: 10
+  Damage: 1
   whatToHit:
     serializedVersion: 2
-    m_Bits: 51
+    m_Bits: 4147
   effectSpawnRate: 10
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4996221322208026, guid: 5f7f9c8bd6aa94f96a794b885422e981,
     type: 2}
   damage: 10
   range: 1000
+  bullet: {fileID: 1439062356261828, guid: 2c3561245cf814ffdaddbe55176483bf, type: 2}
   rotationOffset: -90
 --- !u!1 &1032629973
 GameObject:
@@ -6362,7 +6307,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1122731145}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6712,11 +6657,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &1295009877 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
-    type: 2}
-  m_PrefabInternal: {fileID: 870797864}
 --- !u!1 &1322267280
 GameObject:
   m_ObjectHideFlags: 0
@@ -7325,7 +7265,7 @@ GameObject:
   - component: {fileID: 1423070671}
   - component: {fileID: 1423070670}
   - component: {fileID: 1423070672}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tower (1)
   m_TagString: smallFriendlyTower
   m_Icon: {fileID: 0}
@@ -7474,7 +7414,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460850574
 GameObject:
@@ -8766,7 +8706,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1057717492230964, guid: 15223bdf127f9456284009c638f3f073, type: 2}
       propertyPath: m_Name
@@ -8856,7 +8796,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1687912533}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9074,48 +9014,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.266667, y: 4.266667}
   m_EdgeRadius: 0
---- !u!1001 &1700586406
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0.8195362
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 24.281172
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_RootOrder
-      value: 20
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1750731254
 GameObject:
   m_ObjectHideFlags: 0
@@ -9923,7 +9821,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1885713028}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10995,6 +10893,48 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &2022729631
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -6.6187286
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 14.161586
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2039935928
 GameObject:
   m_ObjectHideFlags: 0
