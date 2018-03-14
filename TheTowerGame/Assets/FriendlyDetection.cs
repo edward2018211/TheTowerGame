@@ -209,7 +209,5 @@ public class FriendlyDetection : MonoBehaviour {
 		} else {
 			gameWon = true;
 		}
-
 	}
-
 }
