@@ -14,6 +14,7 @@ using UnityEngine.UI;
 				    GameObject nearestTower;
 				    public float distanceStartTargetingPlayer = 5f;
 	    			public float distanceToStopFromTarget = 10f;
+					public float meleeDamage = 0.1f;
 				    float posx; 
 				    float posy;
 				    float posz;
@@ -37,12 +38,24 @@ using UnityEngine.UI;
 				    float angle1;
 				    float angle2;
 				    float angle3;
+	float hitTimer = 10;
+	float countHit = 0;
 
 				    void OnCollisionEnter2D(Collision2D c){
 					        if (c.gameObject.tag == "enemyweapon") {
 						            TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
 						        }
 					    }
+
+	void OnCollisionStay2D(Collision2D c){
+		if (c.gameObject.tag == "enemy") {
+			countHit++;
+			if (countHit > hitTimer) {
+				TakeDamage (c.gameObject.GetComponent<FriendlyDetection>().meleeDamage);
+				countHit = 0;
+			}
+		}
+	}
 
 				    public void TakeDamage(float amount) {
 					        health -= amount;

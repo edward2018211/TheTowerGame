@@ -20,6 +20,7 @@ public class FriendlyDetection : MonoBehaviour {
 	float targety;
 	float targetz;
 	float towerx;
+	public float meleeDamage = 0.1f;
 	float towery;
 	float towerz;
 	float degrees;
@@ -36,6 +37,8 @@ public class FriendlyDetection : MonoBehaviour {
 		if (c.gameObject.tag == "friendlyweapon") {
 			TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
 		}
+
+
 	}
 
 
