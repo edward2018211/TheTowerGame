@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class character_controller : MonoBehaviour {
 
@@ -16,6 +17,10 @@ public class character_controller : MonoBehaviour {
 	bool buildMode = false;
 	public GameObject playerArm;
 	public GameObject crosshair;
+	public Image[] dockItems;
+	public GameObject[] holograms;
+	public GameObject[] units;
+	int currentItem = 1;
 
 
 	void Start () {
@@ -27,9 +32,33 @@ public class character_controller : MonoBehaviour {
 
 		if (buildMode) {
 			crosshair.GetComponent<SpriteRenderer> ().enabled = false;
+			for (int i = 0; i < dockItems.Length;i++){
+				if (currentItem == i + 1) {
+					dockItems [i].color = new Color32 (255, 255, 255, 255);
+					holograms [i].GetComponent<SpriteRenderer> ().enabled = true;
+				} else {
+					dockItems [i].color = new Color32 (255, 255, 255, 80);
+					holograms [i].GetComponent<SpriteRenderer> ().enabled = false;
+
+				}
+
+
+			}
 		} else {
 			crosshair.GetComponent<SpriteRenderer> ().enabled = true;
+			for (int i = 0; i < dockItems.Length;i++){
+					dockItems [i].color = new Color32 (255, 255, 255, 80);	
+					holograms [i].GetComponent<SpriteRenderer> ().enabled = false;
+
+			}
+
 		}
+
+		for (int i = 0; i < holograms.Length; i++) {
+			holograms [i].transform.position = new Vector3(Camera.main.ScreenToWorldPoint (Input.mousePosition).x,Camera.main.ScreenToWorldPoint (Input.mousePosition).y,0);
+
+		}
+
 		
 		if (energy < 100) {
 			energyCounter++;
@@ -51,6 +80,16 @@ public class character_controller : MonoBehaviour {
 					if (!GetComponent<SpriteRenderer>().flipX) {
 				GetComponent<SpriteRenderer> ().flipX = true;
 			}
+		}
+
+		if (Input.GetKeyDown("1")){
+			currentItem = 1;
+		}
+		if (Input.GetKeyDown("2")){
+			currentItem = 2;
+		}
+		if (Input.GetKeyDown("3")){
+			currentItem = 3;
 		}
 
 		if (Input.GetKey("d")) {
@@ -78,6 +117,8 @@ public class character_controller : MonoBehaviour {
 					Instantiate (bullet, firePoint.transform.position, Quaternion.Euler (firePoint.transform.rotation.eulerAngles.x, firePoint.transform.rotation.eulerAngles.y, firePoint.transform.rotation.eulerAngles.z - 90));
 					playerArm.GetComponent<character_arm> ().Effect ();
 				}
+			} else {
+				Instantiate (units [currentItem - 1], new Vector3(Camera.main.ScreenToWorldPoint (Input.mousePosition).x,Camera.main.ScreenToWorldPoint (Input.mousePosition).y,0), transform.rotation);
 			}
 		}
 
