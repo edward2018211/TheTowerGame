@@ -37,6 +37,8 @@ public class FriendlyDetection : MonoBehaviour {
 	    float angle3;
 	    bool notTargetingPlayer = true;
 	    float distanceOfFinalTower;
+	public float meleeDamage = 0.1f;
+
 
 	    void OnCollisionEnter2D(Collision2D c){
 		        if (c.gameObject.tag == "friendlyweapon") {

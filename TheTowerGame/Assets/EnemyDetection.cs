@@ -37,12 +37,25 @@ using UnityEngine.UI;
 	                    float angle1;
 	                    float angle2;
 	                    float angle3;
+	public float meleeDamage = 0.1f;
+	int hitRate = 15;
+	int countHit = 0;
 
 	                    void OnCollisionEnter2D(Collision2D c){
 		                            if (c.gameObject.tag == "enemyweapon") {
 			                                    TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
 			                                }
 		                        }
+
+	void OnCollisionStay2D(Collision2D c){
+		if (c.gameObject.tag == "enemy") {
+			countHit++;
+			if (countHit > hitRate) {
+				TakeDamage (c.gameObject.GetComponent<FriendlyDetection> ().meleeDamage);
+				countHit = 0;
+			}
+		}
+	}
 
 	                    public void TakeDamage(float amount) {
 		                            health -= amount;
