@@ -31,6 +31,8 @@ public class TurretDirection : MonoBehaviour {
 	public float range = 1000f;
 	float health = 2f;
 	float rotZ;
+	public GameObject bullet;
+	float count;
 	void Start () {
 
 	}
@@ -44,6 +46,13 @@ public class TurretDirection : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+		count++;
+
+		if (count > fireRate) {
+			Shoot ();
+			count = 0;
+		}
 
 		shortestDistance = 10000;
 
@@ -85,8 +94,9 @@ public class TurretDirection : MonoBehaviour {
 				transform.rotation = Quaternion.Euler(0,180,rotZ + rotationOffset + 90);
 			}
 
-			Shoot ();
 		}
+
+
 
 	}
 
@@ -106,6 +116,7 @@ public class TurretDirection : MonoBehaviour {
 			Effect ();
 			timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
 		}
+		Instantiate (bullet, firePoint.transform.position, Quaternion.Euler(firePoint.transform.rotation.eulerAngles.x,firePoint.transform.rotation.eulerAngles.y,firePoint.transform.rotation.eulerAngles.z - 90));
 	}
 
 
