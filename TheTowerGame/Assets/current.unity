@@ -2102,6 +2102,7 @@ MonoBehaviour:
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4867800421235442, guid: 4d024ccd6739a46da97ee4bb1ec285a1,
     type: 2}
+  nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
   rotationOffset: -90
@@ -8007,6 +8008,7 @@ MonoBehaviour:
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4484923468178962, guid: b75a6b4bd818b4ce08d200a826b5d7fb,
     type: 2}
+  nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
   rotationOffset: -90
@@ -11860,6 +11862,7 @@ MonoBehaviour:
   distanceStartTargeting: 15
   MuzzleFlashPrefab: {fileID: 4789791257467624, guid: 8679461d227174ed49e8247df191138f,
     type: 2}
+  nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
   rotationOffset: -90

@@ -16,7 +16,7 @@ public class TurretDirectionForEnemy : MonoBehaviour {
 	public Transform MuzzleFlashPrefab;
 	GameObject[] gameobjects; 
 	float degrees;
-	GameObject nearestenemy;
+	public GameObject nearestenemy;
 	float posx; 
 	float posy;
 	float posz;

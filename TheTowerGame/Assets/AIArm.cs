@@ -8,6 +8,11 @@ public class AIArm : MonoBehaviour {
 	float rotZ;
 	public float rotationOffset = 90;
 	GameObject target;
+	public float fireRate = 15;
+	public float distanceStartTargeting = 10;
+	float count = 0;
+	public GameObject bullet;
+	public GameObject firePoint;
 
 	void Start () {
 		
@@ -15,8 +20,19 @@ public class AIArm : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+		count++;
+	
+
 		target = GetComponentInParent<EnemyDetection>().getTarget();
-		
+		if (Vector3.Distance (target.transform.position, transform.position) <= distanceStartTargeting) {
+			if (count > fireRate) {
+				Instantiate (bullet, firePoint.transform.position, firePoint.transform.rotation);
+				count = 0;
+			}
+		}
+
+
 		Vector3 difference = target.transform.position - transform.position;
 		difference.Normalize();
 		rotZ = Mathf.Atan2(difference.y,difference.x) * Mathf.Rad2Deg;
