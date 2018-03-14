@@ -28,6 +28,7 @@ public class EnemyDetection : MonoBehaviour {
 	float full = 2;
 	public float health = 1f;
 	int target;
+	bool notTargetingPlayer = true;
 
 	void OnCollisionEnter2D(Collision2D c){
 		if (c.gameObject.tag == "enemyweapon") {
@@ -59,7 +60,7 @@ public class EnemyDetection : MonoBehaviour {
 	}
 
 	void Update () {
-
+		notTargetingPlayer = true;
 		shortestDistance = 10000;
 		towerShortestDistance = 10000;
 
@@ -99,10 +100,10 @@ public class EnemyDetection : MonoBehaviour {
 			}
 		}
 
-		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
+		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance && shortestDistance > distanceStartTargetingPlayer) {
 
 			target = 0;
-
+			notTargetingPlayer = false;
 			if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
 				if (GetComponent<SpriteRenderer> ().flipX) {
@@ -128,14 +129,14 @@ public class EnemyDetection : MonoBehaviour {
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y == 0 && opposingObjectPeople [record].transform.position.x - transform.position.x < 0) {
 				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0 && opposingObjectPeople [record].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
 				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
+			} else {
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			}
 
-		} else if (opposingFriendlySmallTower != null) {
+		} else if (opposingFriendlySmallTower != null && notTargetingPlayer == true) {
+			
 			target = 1;
-
 
 			if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
 				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
@@ -162,12 +163,12 @@ public class EnemyDetection : MonoBehaviour {
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y == 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < 0) {
 				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
 				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
+			} else {
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			}
 
-		} else if(opposingFriendlyLargeTower != null) {
+		} else if(opposingFriendlyLargeTower != null && opposingFriendlySmallTower == null) {
 
 			target = 2;
 
@@ -196,9 +197,9 @@ public class EnemyDetection : MonoBehaviour {
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y == 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < 0) {
 				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
 			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
 				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
+			} else {
+				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
 			} 
 		} else {
 			gameWon = true;
