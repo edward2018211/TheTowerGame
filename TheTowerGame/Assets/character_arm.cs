@@ -59,7 +59,7 @@ public class character_arm : MonoBehaviour {
 
 	}
 
-	void Effect(){
+	public void Effect(){
 		Transform clone = Instantiate (MuzzleFlashPrefab, firePoint.position, firePoint.rotation) as Transform;
 		clone.parent = firePoint;
 		float size = Random.Range (0.6f, 0.9f);
@@ -72,7 +72,7 @@ public class character_arm : MonoBehaviour {
 		Vector2 firePointPrecision = new Vector2 ( firePoint.position.x, firePoint.position.y );
 		RaycastHit2D hit = Physics2D.Raycast (firePointPrecision, mousePosition - firePointPrecision, 100, whatToHit );
 		if (Time.time >= timeToSpawnEffect) {
-			Effect ();
+			
 			timeToSpawnEffect = Time.time + 1 / effectSpawnRate;
 		}
 
