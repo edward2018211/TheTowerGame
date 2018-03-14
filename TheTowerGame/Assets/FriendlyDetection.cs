@@ -13,6 +13,7 @@ public class FriendlyDetection : MonoBehaviour {
 	GameObject nearestenemy;
 	GameObject nearestTower;
 	public float distanceStartTargetingPlayer = 5f;
+	public float distanceToStopFromTarget = 10f;
 	float posx; 
 	float posy;
 	float posz;
@@ -31,6 +32,11 @@ public class FriendlyDetection : MonoBehaviour {
 	public float health = 1f;
 	public Image healthbar;
 	int target;
+	float angle1;
+	float angle2;
+	float angle3;
+	bool notTargetingPlayer = true;
+	float distanceOfFinalTower;
 
 	void OnCollisionEnter2D(Collision2D c){
 		if (c.gameObject.tag == "friendlyweapon") {
@@ -65,7 +71,7 @@ public class FriendlyDetection : MonoBehaviour {
 
 	void Update () {
 		healthbar.fillAmount = health;
-
+		notTargetingPlayer = true;
 		shortestDistance = 10000;
 		towerShortestDistance = 10000;
 
@@ -105,107 +111,36 @@ public class FriendlyDetection : MonoBehaviour {
 			}
 		}
 
-		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
+		distanceOfFinalTower = Mathf.Sqrt( Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.x - posx, 2) + Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.y - posy,2) );
 
+
+		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
+			notTargetingPlayer = false;
 			target = 0;
 
-			if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y < -0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y < -0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0.3 && opposingObjectPeople [record].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y == 0 && opposingObjectPeople [record].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y == 0 && opposingObjectPeople [record].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
-			} else if (opposingObjectPeople [record].transform.position.y - transform.position.y > 0 && opposingObjectPeople [record].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
+			if(shortestDistance > distanceToStopFromTarget){
+				angle1 = Mathf.Atan2 ((opposingObjectPeople [record].transform.position.y - transform.position.y), (opposingObjectPeople [record].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle1) * movementSpeed), transform.position.y + (Mathf.Sin (angle1) * movementSpeed));
 			}
 
-		} else if (opposingFriendlySmallTower != null) {
+		} else if (opposingFriendlySmallTower != null && notTargetingPlayer == true ) {
 
 			target = 1;
 
-			if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y < -0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y < -0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0.3 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y == 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y == 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
-			} else if (opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y > 0 && opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
+			if (towerShortestDistance > distanceToStopFromTarget) {
+				angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y), (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
 			}
 
 		} else if(opposingFriendlyLargeTower != null) {
 
 			target = 2;
 
-			if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y + movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y < -0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0.3) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y - movementSpeed);
-				if (GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = false;
-				}
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y < -0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y - movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0.3 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < -0.3) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y + movementSpeed);
-				if (!GetComponent<SpriteRenderer> ().flipX) {
-					GetComponent<SpriteRenderer> ().flipX = true;
-				}
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y == 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x > 0) {
-				transform.position = new Vector2 (transform.position.x + movementSpeed, transform.position.y);
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y == 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x < 0) {
-				transform.position = new Vector2 (transform.position.x - movementSpeed, transform.position.y);
-			} else if (opposingFriendlyLargeTower [0].transform.position.y - transform.position.y > 0 && opposingFriendlyLargeTower [0].transform.position.x - transform.position.x == 0) {
-				transform.position = new Vector2 (transform.position.x, transform.position.y + movementSpeed);
-			} else {
-				transform.position = new Vector2 (transform.position.x, transform.position.y - movementSpeed);
-			} 
+			if (distanceOfFinalTower > distanceToStopFromTarget) {
+				angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower [0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower [0].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
+			}
+
 		} else {
 			gameWon = true;
 		}

@@ -31,7 +31,7 @@ using UnityEngine.UI;
 				    float full = 2;
 				    public float health = 1f;
 					public Image healthbar;
-
+	float distanceOfFinalTower;
 				    int target;
 				    bool notTargetingPlayer = true;
 				    float angle1;
@@ -110,6 +110,8 @@ using UnityEngine.UI;
 							            }
 						        }
 
+		distanceOfFinalTower = Mathf.Sqrt( Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.x - posx, 2) + Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.y - posy,2) );
+
 					        if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
 
 						            target = 0;
@@ -124,25 +126,23 @@ using UnityEngine.UI;
 					          else if (opposingFriendlySmallTower != null && notTargetingPlayer == true) {
 						            
 						            target = 1;
-
-						            angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y) , (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
-						            transform.position = new Vector2 (transform.position.x + (Mathf.Cos(angle2) * movementSpeed), transform.position.y + (Mathf.Sin(angle2) * movementSpeed) );
-
-						                /**if( angle1 >= 3.14159/2  || ){
-                    if (GetComponent<SpriteRenderer> ().flipX == false) {
-                        GetComponent<SpriteRenderer> ().flipX = true;
-                    }**/
+			if (towerShortestDistance > distanceToStopFromTarget) {
+				angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y), (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
+			}
+						               
 
 						        } 
 					          else if(opposingFriendlyLargeTower != null && opposingFriendlySmallTower == null) {
 
 						            target = 2;
+			if (distanceOfFinalTower > distanceToStopFromTarget) {
+				angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower [0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower [0].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
+			}
 
-						            angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower[0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower[0].transform.position.x - transform.position.x));
-						            transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
-
-
-					        } else {
+					        }
+							else {
 						            gameWon = true;
 						        }
 
