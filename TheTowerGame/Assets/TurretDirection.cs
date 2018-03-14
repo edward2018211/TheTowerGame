@@ -49,10 +49,7 @@ public class TurretDirection : MonoBehaviour {
 
 		count++;
 
-		if (count > fireRate) {
-			Shoot ();
-			count = 0;
-		}
+
 
 		shortestDistance = 10000;
 
@@ -93,8 +90,13 @@ public class TurretDirection : MonoBehaviour {
 				rotZ = Mathf.Atan2(difference.x,difference.y) * Mathf.Rad2Deg;
 				transform.rotation = Quaternion.Euler(0,180,rotZ + rotationOffset + 90);
 			}
+			if (count > fireRate) {
+				Shoot ();
+				count = 0;
+			}
 
 		}
+
 
 
 
