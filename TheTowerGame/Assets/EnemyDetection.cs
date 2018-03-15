@@ -55,11 +55,19 @@ using UnityEngine.UI;
 		                        }
 
 	void OnCollisionStay2D(Collision2D c){
-		if (c.gameObject.tag == "enemy") {
+		if (c.gameObject.tag == "enemy" ) {
 			countHit++;
 			if (countHit > hitRate) {
 				TakeDamage (c.gameObject.GetComponent<FriendlyDetection> ().meleeDamage);
 				countHit = 0;
+				if (anim != null) {
+					anim.SetTrigger ("start");
+				}
+			}
+		}
+		if (c.gameObject.tag == "smallEnemyTower" || c.gameObject.tag == "largeEnemyTower" ) {
+			countHit++;
+			if (countHit > hitRate) {
 				if (anim != null) {
 					anim.SetTrigger ("start");
 				}
