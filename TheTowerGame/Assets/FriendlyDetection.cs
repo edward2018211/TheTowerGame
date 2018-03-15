@@ -41,6 +41,7 @@ public class FriendlyDetection : MonoBehaviour {
 	public float meleeDamage = 0.1f;
 	float countHit;
 	float hitRate = 35;
+	public int fireRate;
 
 	void Start(){
 		currentHealth = health;

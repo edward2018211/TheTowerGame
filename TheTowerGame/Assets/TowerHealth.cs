@@ -27,8 +27,9 @@ public class TowerHealth : MonoBehaviour {
 	void OnCollisionStay2D(Collision2D c){
 		if (c.gameObject.tag == "enemy") {
 			countHit++;
-			if (countHit > c.gameObject.GetComponent<EnemyDetection>().fireRate) {
-				TakeDamage (c.gameObject.GetComponent<EnemyDetection> ().meleeDamage);
+
+			if (countHit > c.gameObject.GetComponent<FriendlyDetection>().fireRate) {
+				TakeDamage (c.gameObject.GetComponent<FriendlyDetection> ().meleeDamage);
 				countHit = 0;
 			}
 		}
