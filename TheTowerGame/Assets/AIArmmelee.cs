@@ -9,6 +9,8 @@ public class AIArmmelee : MonoBehaviour {
 	public float rotationOffset = 90;
 	GameObject target;
 	public Animator anim;
+	public GameObject parent;
+
 
 	void Start () {
 	}
@@ -25,9 +27,12 @@ public class AIArmmelee : MonoBehaviour {
 		transform.rotation = Quaternion.Euler(0f,0f,rotZ + rotationOffset);
 		if (transform.rotation.eulerAngles.z < 90 && transform.rotation.eulerAngles.z > -90) {
 			transform.rotation = Quaternion.Euler(0,0,rotZ + rotationOffset);
+			parent.transform.rotation = Quaternion.Euler(parent.transform.rotation.x,0f,parent.transform.rotation.z);
 		} else {
 			rotZ = Mathf.Atan2(difference.x,difference.y) * Mathf.Rad2Deg;
 			transform.rotation = Quaternion.Euler(0,180,rotZ + rotationOffset + 90);
+			parent.transform.rotation = Quaternion.Euler(parent.transform.rotation.x,180f,parent.transform.rotation.z);
+
 		}
 		
 	}

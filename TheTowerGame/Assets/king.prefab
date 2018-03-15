@@ -259,6 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationOffset: 0
   anim: {fileID: 95974900416669116}
+  parent: {fileID: 1798017863024680}
 --- !u!114 &114522810788356318
 MonoBehaviour:
   m_ObjectHideFlags: 1

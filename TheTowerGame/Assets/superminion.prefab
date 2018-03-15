@@ -121,7 +121,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1057717492230964}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.31, y: 0.32, z: 0}
+  m_LocalPosition: {x: -4.629246, y: 22.494724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 224903222183669998}
@@ -271,6 +271,7 @@ MonoBehaviour:
   distanceStartTargeting: 10
   bullet: {fileID: 1279512625456306, guid: d607e404aea304dc19889c1607bcf5c8, type: 2}
   firePoint: {fileID: 1585195090453694}
+  parent: {fileID: 1057717492230964}
 --- !u!114 &114731417980462068
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -304,7 +305,9 @@ MonoBehaviour:
   distanceToStopFromTarget: 7
   health: 50
   healthbar: {fileID: 114040412368181230}
+  fireRate: 0
   meleeDamage: 0
+  anim: {fileID: 0}
 --- !u!114 &114974299338627232
 MonoBehaviour:
   m_ObjectHideFlags: 1
