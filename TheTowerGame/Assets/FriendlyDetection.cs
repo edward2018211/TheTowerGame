@@ -79,13 +79,19 @@ public class FriendlyDetection : MonoBehaviour {
 	    public GameObject getTarget() {
 
 
-		        if (target == 0) {
-			            return nearestenemy;
-		        } else if (target == 1) {
-			            return nearestTower;
-		        } else{
-			            return opposingFriendlyLargeTower [0];
-			        }
+		if (target == 0) {
+			return nearestenemy;
+		} 
+
+		if (target == 1) {
+			return nearestTower;
+		} 
+
+		if (target == 2) {
+			return opposingFriendlyLargeTower [0];
+		} else {
+			return null;
+		}
 		    }
 
 	    void Update () {
@@ -142,7 +148,7 @@ public class FriendlyDetection : MonoBehaviour {
 				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle1) * movementSpeed), transform.position.y + (Mathf.Sin (angle1) * movementSpeed));
 				            }
 
-		        } else if (opposingFriendlySmallTower != null && notTargetingPlayer == true ) {
+		        } else if (opposingFriendlySmallTower.Length >= 1 && notTargetingPlayer == true ) {
 
 			            target = 1;
 
