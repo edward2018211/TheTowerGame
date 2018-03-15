@@ -39,6 +39,8 @@ public class FriendlyDetection : MonoBehaviour {
 	float currentHealth;
 	    float distanceOfFinalTower;
 	public float meleeDamage = 0.1f;
+	float countHit;
+	float hitRate = 35;
 
 	void Start(){
 		currentHealth = health;
@@ -49,6 +51,16 @@ public class FriendlyDetection : MonoBehaviour {
 			            TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
 			        }
 		    }
+
+	void OnCollisionStay2D(Collision2D c){
+		if (c.gameObject.tag == "friendly") {
+			countHit++;
+			if (countHit > c.gameObject.GetComponent<EnemyDetection>().fireRate) {
+				TakeDamage (c.gameObject.GetComponent<EnemyDetection> ().meleeDamage);
+				countHit = 0;
+			}
+		}
+	}
 
 
 	    public void TakeDamage(float amount) {

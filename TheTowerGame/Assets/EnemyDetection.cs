@@ -37,8 +37,9 @@ using UnityEngine.UI;
 	                    float angle1;
 	                    float angle2;
 	                    float angle3;
+	public int fireRate;
 	public float meleeDamage = 0.1f;
-	int hitRate = 15;
+	int hitRate = 20;
 	int countHit = 0;
 	public Animator anim;
 
