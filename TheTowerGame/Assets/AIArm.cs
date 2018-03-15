@@ -37,7 +37,7 @@ public class AIArm : MonoBehaviour {
 		difference.Normalize();
 		rotZ = Mathf.Atan2(difference.y,difference.x) * Mathf.Rad2Deg;
 		transform.rotation = Quaternion.Euler(0f,0f,rotZ + rotationOffset);
-		if (transform.rotation.eulerAngles.z < 180 && transform.rotation.eulerAngles.z > 0) {
+		if (transform.rotation.eulerAngles.z < 90 && transform.rotation.eulerAngles.z > -90) {
 			transform.rotation = Quaternion.Euler(0,0,rotZ + rotationOffset);
 		} else {
 			rotZ = Mathf.Atan2(difference.x,difference.y) * Mathf.Rad2Deg;

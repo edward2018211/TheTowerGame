@@ -23,6 +23,8 @@ public class character_controller : MonoBehaviour {
 	int currentItem = 1;
 	int countHit;
 	int hitRate = 10;
+	float distanceToMouse;
+	public float maxSpawnDistance;
 
 
 
@@ -66,17 +68,32 @@ public class character_controller : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
+
+		distanceToMouse = Vector3.Distance (new Vector3(Camera.main.ScreenToWorldPoint (Input.mousePosition).x,Camera.main.ScreenToWorldPoint (Input.mousePosition).y,0), transform.position);
+
 		if (buildMode) {
 			crosshair.GetComponent<SpriteRenderer> ().enabled = false;
 			for (int i = 0; i < dockItems.Length;i++){
 				if (currentItem == i + 1) {
+					
 					dockItems [i].color = new Color32 (255, 255, 255, 255);
+
 					holograms [i].GetComponent<SpriteRenderer> ().enabled = true;
+
+					if (distanceToMouse > maxSpawnDistance) {
+						holograms [i].GetComponent<SpriteRenderer> ().color = new Color32 (255, 0, 0, 120);
+					} else {
+						holograms [i].GetComponent<SpriteRenderer> ().color = new Color32 (255, 255, 255, 120);
+					}
+
 				} else {
 					dockItems [i].color = new Color32 (255, 255, 255, 80);
 					holograms [i].GetComponent<SpriteRenderer> ().enabled = false;
 
 				}
+
+
 
 
 			}
@@ -155,7 +172,14 @@ public class character_controller : MonoBehaviour {
 				}
 			} else {
 				if (currentItem == 2) {
-					if (energy >= 40) {
+					if (energy >= 40 && distanceToMouse < maxSpawnDistance) {
+						Instantiate (units [currentItem - 1], new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0), transform.rotation);
+
+						energy -= 40;
+					}
+				}
+				if (currentItem == 1) {
+					if (energy >= 40 && distanceToMouse < maxSpawnDistance) {
 						Instantiate (units [currentItem - 1], new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0), transform.rotation);
 
 						energy -= 40;

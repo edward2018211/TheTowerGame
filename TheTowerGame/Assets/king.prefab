@@ -123,7 +123,7 @@ Transform:
   m_GameObject: {fileID: 1798017863024680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.7506146, y: 27.1, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children:
   - {fileID: 224232007573110184}
   - {fileID: 4385030270181014}
@@ -168,7 +168,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -314,9 +314,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameWon: 0
-  movementSpeed: 0.01
+  movementSpeed: 0.05
   distanceStartTargetingPlayer: 5
-  distanceToStopFromTarget: 10
+  distanceToStopFromTarget: 0
   health: 150
   healthbar: {fileID: 114478844448861894}
   fireRate: 35

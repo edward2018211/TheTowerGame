@@ -90,7 +90,11 @@ using UnityEngine.UI;
 			                                }
 		                        }
 
+
+
 	                    void Update () {
+
+
 		            healthbar.fillAmount = currentHealth/health;
 
 		                            notTargetingPlayer = true;

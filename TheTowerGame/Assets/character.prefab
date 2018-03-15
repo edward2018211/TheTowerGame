@@ -303,7 +303,7 @@ MonoBehaviour:
   firePoint: {fileID: 1125845969297010}
   health: 100
   energy: 50
-  energyRechargeRate: 5
+  energyRechargeRate: 1
   playerArm: {fileID: 1318029876442550}
   crosshair: {fileID: 0}
   dockItems:
@@ -315,9 +315,10 @@ MonoBehaviour:
   - {fileID: 1235797468593056}
   - {fileID: 1286451167057060}
   units:
-  - {fileID: 0}
+  - {fileID: 1798017863024680, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
   - {fileID: 1057717492230964, guid: 15223bdf127f9456284009c638f3f073, type: 2}
   - {fileID: 0}
+  maxSpawnDistance: 11
 --- !u!212 &212047067459110728
 SpriteRenderer:
   m_ObjectHideFlags: 1
