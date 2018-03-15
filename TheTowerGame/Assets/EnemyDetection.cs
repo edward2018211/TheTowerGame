@@ -160,7 +160,7 @@ using UnityEngine.UI;
 			                                       
 
 			                                } 
-		                              else if(opposingFriendlyLargeTower != null && opposingFriendlySmallTower == null) {
+		else if(opposingFriendlyLargeTower != null && opposingFriendlySmallTower == null) {
 
 			                                    target = 2;
 			            if (distanceOfFinalTower > distanceToStopFromTarget) {
