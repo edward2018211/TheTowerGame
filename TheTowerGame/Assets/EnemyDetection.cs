@@ -42,7 +42,7 @@ using UnityEngine.UI;
 	int hitRate = 20;
 	int countHit = 0;
 	public Animator anim;
-	int towerDestroyCount;
+	int towerDestroyCount = 0;
 
 	float currentHealth;
 
@@ -79,15 +79,16 @@ using UnityEngine.UI;
 	                    public void TakeDamage(float amount) {
 		                            currentHealth -= amount;
 		                            if (currentHealth <= 0) {
+									
 			                                    Die ();
 			                                }
 		                        }
 
 	                    void Die(){
+
 		                            Destroy (gameObject);
-		if (gameObject.tag == "smallEnemyTower") {
-			towerDestroyCount++;
-		}
+
+		
 		                        }
 
 	                    public GameObject getTarget() {
@@ -171,7 +172,7 @@ using UnityEngine.UI;
 				                                    }
 
 			                                }
-		              else if (towerDestroyCount < 2 && notTargetingPlayer == true) {
+		              else if (opposingFriendlySmallTower.Length >= 1 && notTargetingPlayer == true) {
 			                                    
 			                                    target = 1;
 			                  if (towerShortestDistance > distanceToStopFromTarget) {
