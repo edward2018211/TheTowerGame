@@ -303,7 +303,7 @@ MonoBehaviour:
   firePoint: {fileID: 1125845969297010}
   health: 100
   energy: 50
-  energyRechargeRate: 10
+  energyRechargeRate: 5
   playerArm: {fileID: 1318029876442550}
   crosshair: {fileID: 0}
   dockItems:

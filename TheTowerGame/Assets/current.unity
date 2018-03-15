@@ -632,7 +632,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 76772464}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -786,7 +786,7 @@ MonoBehaviour:
   enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
   stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 1
+  spawnDelay: 3
 --- !u!4 &125177483
 Transform:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &140680967
 GameObject:
@@ -1159,7 +1159,7 @@ GameObject:
   - component: {fileID: 175555867}
   - component: {fileID: 175555866}
   - component: {fileID: 175555868}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tower (3)
   m_TagString: smallEnemyTower
   m_Icon: {fileID: 0}
@@ -1221,7 +1221,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &175555868
 BoxCollider2D:
@@ -1772,7 +1772,7 @@ GameObject:
   - component: {fileID: 238030833}
   - component: {fileID: 238030835}
   - component: {fileID: 238030834}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Grass2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2017,7 +2017,7 @@ GameObject:
   - component: {fileID: 246196907}
   - component: {fileID: 246196906}
   - component: {fileID: 246196908}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: character_gun (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ Transform:
   m_Children:
   - {fileID: 824810043}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &246196908
 MonoBehaviour:
@@ -2093,7 +2093,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8e851cb7f54a55a7482c6710a2ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
   Damage: 10
   whatToHit:
     serializedVersion: 2
@@ -2105,6 +2104,8 @@ MonoBehaviour:
   nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
+  bullet: {fileID: 1788273888437394, guid: b808ce3d99cb44439a2a120da45709dd, type: 2}
+  fireRate: 10
   rotationOffset: -90
 --- !u!1 &270203171
 GameObject:
@@ -2648,6 +2649,58 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &356589818
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 4.7506146
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 11.570236
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4300730399581258, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 114503359673800550, guid: 61d318710399f469897a33ca7dcdc2c1,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1097814498}
+    - target: {fileID: 114610108933677534, guid: 61d318710399f469897a33ca7dcdc2c1,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1097814498}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 61d318710399f469897a33ca7dcdc2c1, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &356982226
 GameObject:
   m_ObjectHideFlags: 0
@@ -2866,7 +2919,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &416910072
 BoxCollider2D:
@@ -3652,52 +3705,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1001 &555197119
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 10.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4103123812144898, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1057717492230964, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-      propertyPath: m_Name
-      value: superminion (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 15223bdf127f9456284009c638f3f073, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &556229876
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,7 +3777,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &556229879
 BoxCollider2D:
@@ -4025,7 +4032,7 @@ MonoBehaviour:
   enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
   stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 1
+  spawnDelay: 3
 --- !u!4 &586641291
 Transform:
   m_ObjectHideFlags: 0
@@ -4037,7 +4044,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &602807409
 GameObject:
@@ -4211,7 +4218,7 @@ Transform:
   m_Children:
   - {fileID: 1687912533}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &609658995
 MonoBehaviour:
@@ -4310,7 +4317,7 @@ Transform:
   m_Children:
   - {fileID: 1885713028}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &633201784
 MonoBehaviour:
@@ -4934,7 +4941,7 @@ Transform:
   - {fileID: 216507579}
   - {fileID: 1914421443}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &784046535
 GameObject:
@@ -5319,7 +5326,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 824810043}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5737,7 +5744,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &895342179
 MonoBehaviour:
@@ -5760,7 +5767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 964526154}
   - component: {fileID: 964526155}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Grass1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5969,7 +5976,7 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &996397090
 MonoBehaviour:
@@ -6253,7 +6260,7 @@ Transform:
   m_Children:
   - {fileID: 1122731145}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1016929870
 MonoBehaviour:
@@ -6369,7 +6376,7 @@ RectTransform:
   - {fileID: 663559873}
   - {fileID: 527264304}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6986,6 +6993,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &1097814498 stripped
+Animator:
+  m_PrefabParentObject: {fileID: 95974900416669116, guid: 61d318710399f469897a33ca7dcdc2c1,
+    type: 2}
+  m_PrefabInternal: {fileID: 356589818}
 --- !u!1 &1122731144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,7 +7326,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1216704704}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7923,7 +7935,7 @@ GameObject:
   - component: {fileID: 1358570002}
   - component: {fileID: 1358570001}
   - component: {fileID: 1358570003}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: character_gun (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7986,7 +7998,7 @@ Transform:
   m_Children:
   - {fileID: 76772464}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &1358570003
 MonoBehaviour:
@@ -7999,7 +8011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8e851cb7f54a55a7482c6710a2ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
   Damage: 10
   whatToHit:
     serializedVersion: 2
@@ -8011,6 +8022,8 @@ MonoBehaviour:
   nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
+  bullet: {fileID: 1788273888437394, guid: b808ce3d99cb44439a2a120da45709dd, type: 2}
+  fireRate: 10
   rotationOffset: -90
 --- !u!1 &1382214378
 GameObject:
@@ -8225,7 +8238,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1423070672
 BoxCollider2D:
@@ -8312,7 +8325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1460850574
 GameObject:
@@ -8670,7 +8683,7 @@ GameObject:
   - component: {fileID: 1527212673}
   - component: {fileID: 1527212672}
   - component: {fileID: 1527212674}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: maintower (1)
   m_TagString: largeEnemyTower
   m_Icon: {fileID: 0}
@@ -8732,7 +8745,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1527212674
 BoxCollider2D:
@@ -9484,7 +9497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4914933838727564, guid: f741156b9b10f40c9acad2e42d19da95, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114526373523234042, guid: f741156b9b10f40c9acad2e42d19da95,
         type: 2}
@@ -10938,7 +10951,7 @@ GameObject:
   - component: {fileID: 1895923881}
   - component: {fileID: 1895923880}
   - component: {fileID: 1895923882}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tower (2)
   m_TagString: smallEnemyTower
   m_Icon: {fileID: 0}
@@ -11000,7 +11013,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1895923882
 BoxCollider2D:
@@ -11494,7 +11507,7 @@ Transform:
   - {fileID: 1506738458}
   - {fileID: 1758018705}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1950753621
 GameObject:
@@ -11777,7 +11790,7 @@ GameObject:
   - component: {fileID: 2011029970}
   - component: {fileID: 2011029969}
   - component: {fileID: 2011029971}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: character_gun (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11840,7 +11853,7 @@ Transform:
   m_Children:
   - {fileID: 1216704704}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!114 &2011029971
 MonoBehaviour:
@@ -11853,7 +11866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a8e851cb7f54a55a7482c6710a2ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0
   Damage: 10
   whatToHit:
     serializedVersion: 2
@@ -11865,6 +11877,8 @@ MonoBehaviour:
   nearestenemy: {fileID: 0}
   damage: 10
   range: 1000
+  bullet: {fileID: 1788273888437394, guid: b808ce3d99cb44439a2a120da45709dd, type: 2}
+  fireRate: 10
   rotationOffset: -90
 --- !u!1 &2019957300
 GameObject:
@@ -11977,6 +11991,11 @@ Prefab:
     - target: {fileID: 4349598174372276, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114579906871466132, guid: 26b1cdbedb0d54c289506fec1ce1ecd3,
+        type: 2}
+      propertyPath: meleeDamage
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}

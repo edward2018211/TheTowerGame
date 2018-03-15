@@ -21,11 +21,47 @@ public class character_controller : MonoBehaviour {
 	public GameObject[] holograms;
 	public GameObject[] units;
 	int currentItem = 1;
+	int countHit;
+	int hitRate = 10;
+
+
+
+	void OnCollisionEnter2D(Collision2D c){
+		if (c.gameObject.tag == "enemyweapon") {
+			TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
+		}
+	}
+
+	void OnCollisionStay2D(Collision2D c){
+		if (c.gameObject.tag == "enemy") {
+			countHit++;
+			if (countHit > hitRate) {
+				TakeDamage (c.gameObject.GetComponent<FriendlyDetection> ().meleeDamage);
+				countHit = 0;
+			}
+		}
+	}
+
+	public void TakeDamage(float amount) {
+		health -= amount;
+		if (health <= 0) {
+			Die ();
+		}
+	}
+
+	void Die(){
+		
+		Destroy (gameObject);
+	}
+
+
 
 
 	void Start () {
 		
 	}
+
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -118,7 +154,13 @@ public class character_controller : MonoBehaviour {
 					playerArm.GetComponent<character_arm> ().Effect ();
 				}
 			} else {
-				Instantiate (units [currentItem - 1], new Vector3(Camera.main.ScreenToWorldPoint (Input.mousePosition).x,Camera.main.ScreenToWorldPoint (Input.mousePosition).y,0), transform.rotation);
+				if (currentItem == 2) {
+					if (energy >= 40) {
+						Instantiate (units [currentItem - 1], new Vector3 (Camera.main.ScreenToWorldPoint (Input.mousePosition).x, Camera.main.ScreenToWorldPoint (Input.mousePosition).y, 0), transform.rotation);
+
+						energy -= 40;
+					}
+				}
 			}
 		}
 

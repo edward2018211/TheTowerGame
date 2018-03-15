@@ -36,9 +36,13 @@ public class FriendlyDetection : MonoBehaviour {
 	    float angle2;
 	    float angle3;
 	    bool notTargetingPlayer = true;
+	float currentHealth;
 	    float distanceOfFinalTower;
 	public float meleeDamage = 0.1f;
 
+	void Start(){
+		currentHealth = health;
+	}
 
 	    void OnCollisionEnter2D(Collision2D c){
 		        if (c.gameObject.tag == "friendlyweapon") {
@@ -48,8 +52,8 @@ public class FriendlyDetection : MonoBehaviour {
 
 
 	    public void TakeDamage(float amount) {
-		        health -= amount;
-		        if (health <= 0) {
+		        currentHealth -= amount;
+		        if (currentHealth <= 0) {
 			            Die ();
 			        }
 		    }
@@ -72,7 +76,7 @@ public class FriendlyDetection : MonoBehaviour {
 		    }
 
 	    void Update () {
-		        healthbar.fillAmount = health;
+		healthbar.fillAmount = currentHealth / health;
 		        notTargetingPlayer = true;
 		        shortestDistance = 10000;
 		        towerShortestDistance = 10000;

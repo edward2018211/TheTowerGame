@@ -40,7 +40,13 @@ using UnityEngine.UI;
 	public float meleeDamage = 0.1f;
 	int hitRate = 15;
 	int countHit = 0;
+	public Animator anim;
 
+	float currentHealth;
+
+	void Start(){
+		currentHealth = health;
+	}
 	                    void OnCollisionEnter2D(Collision2D c){
 		                            if (c.gameObject.tag == "enemyweapon") {
 			                                    TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
@@ -53,13 +59,16 @@ using UnityEngine.UI;
 			if (countHit > hitRate) {
 				TakeDamage (c.gameObject.GetComponent<FriendlyDetection> ().meleeDamage);
 				countHit = 0;
+				if (anim != null) {
+					anim.SetTrigger ("start");
+				}
 			}
 		}
 	}
 
 	                    public void TakeDamage(float amount) {
-		                            health -= amount;
-		                            if (health <= 0) {
+		                            currentHealth -= amount;
+		                            if (currentHealth <= 0) {
 			                                    Die ();
 			                                }
 		                        }
@@ -81,7 +90,7 @@ using UnityEngine.UI;
 		                        }
 
 	                    void Update () {
-		            healthbar.fillAmount = health;
+		            healthbar.fillAmount = currentHealth/health;
 
 		                            notTargetingPlayer = true;
 		                            shortestDistance = 10000;
