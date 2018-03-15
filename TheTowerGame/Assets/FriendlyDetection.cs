@@ -151,7 +151,7 @@ public class FriendlyDetection : MonoBehaviour {
 				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
 				            }
 
-		        } else if(opposingFriendlyLargeTower != null) {
+		        } else {
 
 			            target = 2;
 
@@ -160,9 +160,7 @@ public class FriendlyDetection : MonoBehaviour {
 				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
 				            }
 
-		        } else {
-			            gameWon = true;
-			        }
+		        } 
 		    }
 } 
 

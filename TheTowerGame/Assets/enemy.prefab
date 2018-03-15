@@ -249,7 +249,7 @@ MonoBehaviour:
   distanceToStopFromTarget: 0
   health: 30
   healthbar: {fileID: 114340063180165450}
-  meleeDamage: 5
+  meleeDamage: 2
   fireRate: 0
 --- !u!212 &212909693732158158
 SpriteRenderer:
