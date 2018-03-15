@@ -19,13 +19,13 @@ public class TowerHealth : MonoBehaviour {
 
 
 	void OnCollisionEnter2D(Collision2D c){
-		if (c.gameObject.tag == "friendlyweapon") {
+		if (c.gameObject.tag == "enemyweapon") {
 			TakeDamage (c.gameObject.GetComponent<BulletBehavior>().damage);
 		}
 	}
 
 	void OnCollisionStay2D(Collision2D c){
-		if (c.gameObject.tag == "friendly") {
+		if (c.gameObject.tag == "enemy") {
 			countHit++;
 			if (countHit > c.gameObject.GetComponent<EnemyDetection>().fireRate) {
 				TakeDamage (c.gameObject.GetComponent<EnemyDetection> ().meleeDamage);
