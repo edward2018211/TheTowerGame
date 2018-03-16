@@ -55,7 +55,40 @@ using UnityEngine.UI;
 			                                }
 		                        }
 
+
+	void avoidObstacle(Collision2D c){
+		GameObject target = getTarget();
+		Vector3 direction = target.transform.position - transform.position;
+		direction.Normalize ();
+		RaycastHit2D hit = Physics2D.Raycast (transform.position, direction);
+		float rotZ = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
+
+		if ((c.gameObject.tag == "friendly" || c.gameObject.tag == "smallFriendlyTower" || c.gameObject.tag == "largeFriendlyTower") && (hit.collider.tag == "friendly" || hit.collider.tag == "smallFriendlyTower" || hit.collider.tag == "largeFriendlyTower")) {
+			if ((rotZ < 45 && rotZ > -45) || (rotZ < 225 && rotZ > 135)) {
+				if (transform.position.y < c.transform.position.y) {
+					transform.position += -transform.up * Time.deltaTime * 4;
+				} else {
+					transform.position += transform.up * Time.deltaTime * 4;
+
+				}
+
+
+			} else {
+				if (transform.position.x < c.transform.position.x) {
+					transform.position += -transform.right * Time.deltaTime * 4;
+				} else {
+					transform.position += transform.right * Time.deltaTime * 4;
+
+				}
+			}
+
+		}
+	}
+
 	void OnCollisionStay2D(Collision2D c){
+		avoidObstacle (c);
+
+
 		if (c.gameObject.tag == "enemy" ) {
 			countHit++;
 			if (countHit > hitRate) {
