@@ -63,10 +63,10 @@ using UnityEngine.UI;
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, direction);
 		float rotZ = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
 		Quaternion rotation = Quaternion.Euler(0f,0f,rotZ + 90);
-		Debug.Log (rotation.eulerAngles.z);
+		Debug.Log (c.gameObject.tag);
 		if ((c.gameObject.tag == "friendly" || c.gameObject.tag == "smallFriendlyTower" || c.gameObject.tag == "largeFriendlyTower") && (hit.collider.tag == "friendly" || hit.collider.tag == "smallFriendlyTower" || hit.collider.tag == "largeFriendlyTower")) {
 			if ((rotation.eulerAngles.z < 315 && rotation.eulerAngles.z > 225) || (rotation.eulerAngles.z < 135 && rotation.eulerAngles.z > 45)) {
-				if (transform.position.y < c.gameObject.transform.position.y) {
+				if (transform.position.y < c.transform.position.y) {
 					transform.position += -transform.up * Time.deltaTime * 4;
 				} else {
 					transform.position += transform.up * Time.deltaTime * 4;
@@ -74,7 +74,7 @@ using UnityEngine.UI;
 
 
 			} else {
-				if (transform.position.x < c.gameObject.transform.position.x) {
+				if (transform.position.x < c.transform.position.x) {
 					transform.position += -transform.right * Time.deltaTime * 4;
 				} else {
 					transform.position += transform.right * Time.deltaTime * 4;
