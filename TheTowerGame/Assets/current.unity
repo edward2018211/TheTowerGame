@@ -852,9 +852,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-  stopSpawning: 1
+  stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 2
+  spawnDelay: 0.6
 --- !u!4 &125177483
 Transform:
   m_ObjectHideFlags: 0
@@ -4362,9 +4362,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 1810091515522352, guid: 26b1cdbedb0d54c289506fec1ce1ecd3, type: 2}
-  stopSpawning: 1
+  stopSpawning: 0
   spawnTime: 1
-  spawnDelay: 2
+  spawnDelay: 0.6
 --- !u!4 &586641291
 Transform:
   m_ObjectHideFlags: 0
