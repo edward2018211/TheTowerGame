@@ -250,7 +250,7 @@ MonoBehaviour:
   health: 30
   healthbar: {fileID: 114340063180165450}
   meleeDamage: 2
-  fireRate: 0
+  fireRate: 5
 --- !u!212 &212909693732158158
 SpriteRenderer:
   m_ObjectHideFlags: 1
