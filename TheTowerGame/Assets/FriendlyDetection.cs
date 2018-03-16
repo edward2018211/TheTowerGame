@@ -53,10 +53,11 @@ public class FriendlyDetection : MonoBehaviour {
 
 		float rotZ = Mathf.Atan2(direction.y,direction.x) * Mathf.Rad2Deg;
 		Quaternion rotation = Quaternion.Euler(0f,0f,rotZ + 90);
+		Debug.Log (rotation.eulerAngles.z);
 
 		if ((c.gameObject.tag == "enemy" || c.gameObject.tag == "smallEnemyTower" || c.gameObject.tag == "largeEnemyTower") && (hit.collider.tag == "enemy" || hit.collider.tag == "smallEnemyTower" || hit.collider.tag == "largeEnemyTower")) {
 			if ((rotation.eulerAngles.z < 315 && rotation.eulerAngles.z > 225) || (rotation.eulerAngles.z < 135 && rotation.eulerAngles.z > 45)) {
-				if (transform.position.y < c.transform.position.y) {
+				if (transform.position.y < c.gameObject.transform.position.y) {
 					transform.position += -transform.up * Time.deltaTime * 4;
 				} else {
 					transform.position += transform.up * Time.deltaTime * 4;
@@ -65,7 +66,7 @@ public class FriendlyDetection : MonoBehaviour {
 
 
 			} else {
-				if (transform.position.x < c.transform.position.x) {
+				if (transform.position.x < c.gameObject.transform.position.x) {
 					transform.position += -transform.right * Time.deltaTime * 4;
 				} else {
 					transform.position += transform.right * Time.deltaTime * 4;
