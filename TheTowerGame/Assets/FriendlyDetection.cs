@@ -130,77 +130,89 @@ public class FriendlyDetection : MonoBehaviour {
 
 	    void Update () {
 		healthbar.fillAmount = currentHealth / health;
-		        notTargetingPlayer = true;
-		        shortestDistance = 10000;
-		        towerShortestDistance = 10000;
+		notTargetingPlayer = true;
+		shortestDistance = 10000;
+		towerShortestDistance = 10000;
 
-		        opposingObjectPeople = GameObject.FindGameObjectsWithTag("friendly");
-		        opposingFriendlySmallTower = GameObject.FindGameObjectsWithTag("smallFriendlyTower");
-		        opposingFriendlyLargeTower = GameObject.FindGameObjectsWithTag("largeFriendlyTower");
+		opposingObjectPeople = GameObject.FindGameObjectsWithTag ("friendly");
+		opposingFriendlySmallTower = GameObject.FindGameObjectsWithTag ("smallFriendlyTower");
+		opposingFriendlyLargeTower = GameObject.FindGameObjectsWithTag ("largeFriendlyTower");
 
-		        posx = transform.position.x; 
-		        posy = transform.position.y;
-		        posz = transform.position.z;
+		posx = transform.position.x; 
+		posy = transform.position.y;
+		posz = transform.position.z;
 
-		        for (int i = 0; i < opposingObjectPeople.Length; i++) {
-			            targetx = opposingObjectPeople[i].transform.position.x; 
-			            targety = opposingObjectPeople[i].transform.position.y;
-			            targetz = opposingObjectPeople[i].transform.position.z;
+		for (int i = 0; i < opposingObjectPeople.Length; i++) {
+			targetx = opposingObjectPeople [i].transform.position.x; 
+			targety = opposingObjectPeople [i].transform.position.y;
+			targetz = opposingObjectPeople [i].transform.position.z;
 
-			            var distance = Mathf.Sqrt( Mathf.Pow(targetx - posx, 2) + Mathf.Pow(targety - posy,2) );
+			var distance = Mathf.Sqrt (Mathf.Pow (targetx - posx, 2) + Mathf.Pow (targety - posy, 2));
 
-			            if (distance < shortestDistance) {
-				                shortestDistance = distance;
-				                nearestenemy = opposingObjectPeople[i];
-				                record = i;
-				            }
-			        }
+			if (distance < shortestDistance) {
+				shortestDistance = distance;
+				nearestenemy = opposingObjectPeople [i];
+				record = i;
+			}
+		}
 
-		        for (int j = 0; j < opposingFriendlySmallTower.Length; j++) {
-			            towerx = opposingFriendlySmallTower[j].transform.position.x; 
-			            towery = opposingFriendlySmallTower[j].transform.position.y;
-			            towerz = opposingFriendlySmallTower[j].transform.position.z;
+		for (int j = 0; j < opposingFriendlySmallTower.Length; j++) {
+			towerx = opposingFriendlySmallTower [j].transform.position.x; 
+			towery = opposingFriendlySmallTower [j].transform.position.y;
+			towerz = opposingFriendlySmallTower [j].transform.position.z;
 
-			            var towerDistance = Mathf.Sqrt( Mathf.Pow(towerx - posx, 2) + Mathf.Pow(towery - posy,2) );
+			var towerDistance = Mathf.Sqrt (Mathf.Pow (towerx - posx, 2) + Mathf.Pow (towery - posy, 2));
 
-			            if (towerDistance < towerShortestDistance) {
-				                towerShortestDistance = towerDistance;
-				                nearestTower = opposingFriendlySmallTower[j];
-				                recordSmallTower = j;
-				            }
-			        }
+			if (towerDistance < towerShortestDistance) {
+				towerShortestDistance = towerDistance;
+				nearestTower = opposingFriendlySmallTower [j];
+				recordSmallTower = j;
+			}
+		}
 
-		        distanceOfFinalTower = Mathf.Sqrt( Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.x - posx, 2) + Mathf.Pow(opposingFriendlyLargeTower[0].transform.position.y - posy,2) );
+		distanceOfFinalTower = Mathf.Sqrt (Mathf.Pow (opposingFriendlyLargeTower [0].transform.position.x - posx, 2) + Mathf.Pow (opposingFriendlyLargeTower [0].transform.position.y - posy, 2));
 
 
-		        if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance ) {
-			            notTargetingPlayer = false;
-			            target = 0;
+		if (shortestDistance < distanceStartTargetingPlayer && towerShortestDistance > shortestDistance) {
+			notTargetingPlayer = false;
+			target = 0;
 
-			            if(shortestDistance > distanceToStopFromTarget){
-				                angle1 = Mathf.Atan2 ((opposingObjectPeople [record].transform.position.y - transform.position.y), (opposingObjectPeople [record].transform.position.x - transform.position.x));
-				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle1) * movementSpeed), transform.position.y + (Mathf.Sin (angle1) * movementSpeed));
-				            }
+			if (shortestDistance > distanceToStopFromTarget) {
+				angle1 = Mathf.Atan2 ((opposingObjectPeople [record].transform.position.y - transform.position.y), (opposingObjectPeople [record].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle1) * movementSpeed), transform.position.y + (Mathf.Sin (angle1) * movementSpeed));
+			}
 
-		        } else if (opposingFriendlySmallTower.Length >= 1 && notTargetingPlayer == true ) {
+		} else if (opposingFriendlySmallTower.Length >= 1 && notTargetingPlayer == true) {
 
-			            target = 1;
+			target = 1;
+					
+			if (towerShortestDistance > distanceToStopFromTarget && opposingFriendlySmallTower.Length > 1) {
+				angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y), (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
+				transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
+			} else {
 
-			            if (towerShortestDistance > distanceToStopFromTarget) {
-				                angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y), (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
-				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
-				            }
+				if (towerShortestDistance < distanceOfFinalTower && towerShortestDistance > distanceToStopFromTarget) {
+					angle2 = Mathf.Atan2 ((opposingFriendlySmallTower [recordSmallTower].transform.position.y - transform.position.y), (opposingFriendlySmallTower [recordSmallTower].transform.position.x - transform.position.x));
+					transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle2) * movementSpeed), transform.position.y + (Mathf.Sin (angle2) * movementSpeed));
+				} else {
+					if (distanceOfFinalTower > distanceToStopFromTarget) {
+						angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower [0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower [0].transform.position.x - transform.position.x));
+						transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
+					}
+				} 
+			}
 
-		        } else {
+		} else {
 
-			            target = 2;
+				target = 2;
 
-			            if (distanceOfFinalTower > distanceToStopFromTarget) {
-				                angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower [0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower [0].transform.position.x - transform.position.x));
-				                transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
-				            }
+				if (distanceOfFinalTower > distanceToStopFromTarget) {
+					angle3 = Mathf.Atan2 ((opposingFriendlyLargeTower [0].transform.position.y - transform.position.y), (opposingFriendlyLargeTower [0].transform.position.x - transform.position.x));
+					transform.position = new Vector2 (transform.position.x + (Mathf.Cos (angle3) * movementSpeed), transform.position.y + (Mathf.Sin (angle3) * movementSpeed));
+				}
 
-		        } 
-		    }
+			} 
+
+	}
 } 
 
