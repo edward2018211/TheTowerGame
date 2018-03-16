@@ -136,10 +136,10 @@ using UnityEngine.UI;
 		                            } 
 								
 		if (target == 2) {
+			if(opposingFriendlyLargeTower.Length > 0){
 			return opposingFriendlyLargeTower [0];
-		} else {
-			return null;
-		}
+			}
+		} 
 
 
 									
