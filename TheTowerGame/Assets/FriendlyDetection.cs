@@ -122,10 +122,13 @@ public class FriendlyDetection : MonoBehaviour {
 		} 
 
 		if (target == 2) {
-			if(opposingFriendlyLargeTower.Length > 0){
+			if (opposingFriendlyLargeTower.Length > 0) {
 				return opposingFriendlyLargeTower [0];
+			} else {
+				return null;
 			}
-		} 
+		}
+		return  null;
 		    }
 
 	    void Update () {
