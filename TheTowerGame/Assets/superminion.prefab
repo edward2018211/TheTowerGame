@@ -302,7 +302,7 @@ MonoBehaviour:
   gameWon: 0
   movementSpeed: 0.02
   distanceStartTargetingPlayer: 10
-  distanceToStopFromTarget: 0
+  distanceToStopFromTarget: 7
   health: 50
   healthbar: {fileID: 114040412368181230}
   fireRate: 0
