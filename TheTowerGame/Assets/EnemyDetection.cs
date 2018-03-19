@@ -9,7 +9,7 @@ using UnityEngine.UI;
 	                    public float movementSpeed = 0.01f;
 	                    GameObject[] opposingObjectPeople;
 	                    GameObject[] opposingFriendlySmallTower;
-	                    GameObject[] opposingFriendlyLargeTower;
+	public static GameObject[] opposingFriendlyLargeTower;
 	                    GameObject nearestenemy;
 	                    GameObject nearestTower;
 	                    public float distanceStartTargetingPlayer = 5f;
