@@ -14,6 +14,7 @@ public class AIArm : MonoBehaviour {
 	public GameObject bullet;
 	public GameObject firePoint;
 	public GameObject parent;
+	float multiplayer;
 
 	void Start () {
 		
