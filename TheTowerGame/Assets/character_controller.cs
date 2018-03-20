@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class character_controller : MonoBehaviour {
+
+
+public class character_controller : NetworkBehaviour {
 
 	public float moveSpeed = 0.01f;
 	 
@@ -67,6 +70,10 @@ public class character_controller : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (!isLocalPlayer)
+		{
+			return;
+		}
 
 
 
